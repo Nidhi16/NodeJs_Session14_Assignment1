@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title jade
+  body
+    h4 Company Name: #{name}
+    h4 Type: #{type}
+    h4 Founded By: #{founded}
+    h4 Founder: #{founder.first_name} #{founder.last_name}
+    h4 Headquarter: #{headquarter}
+    h4 Total Number of employees: #{total_employees}
+    h4 Total revenue of the company: $#{revenue} billion
+    h4 Other operational areas:
+        each area in areas_served
+            h5= area
+        

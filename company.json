@@ -1,0 +1,13 @@
+{
+	"name": "Abc India",
+	"type": "Public",
+	"founded": "16-06-1990",
+	"founder": {
+		"first_name": "John",
+		"last_name": "Doe"
+	},
+	"headquarter": "Banglore",
+	"areas_served": ["Gurgaon", "Pune", "Hyderabad", "Mumbai"],
+	"total_employees": 500,
+	"revenue": 100
+}
