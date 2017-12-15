@@ -1,16 +1,18 @@
+// Load all the required modules
 var express = require('express');
 var fs = require('fs');
 var path = require('path');
 
 var router = express.Router();
 
+// Setting the relative path of the json file
 var filePath = path.join(__dirname, '..', 'company.json');
 
+// Listening to the get request
 router.get('/', function(request, response){
+    // reading json file asynchronously
     fs.readFile(filePath, 'utf-8', function(error, data){
-        var result = JSON.parse(data);
-        // console.log(typeof(result));
-        // console.log(typeof(result.areas_served));
+        var result = JSON.parse(data); // parsing the result into object
         var context = {
             "name": result.name,
             "type": result.type,
@@ -21,8 +23,10 @@ router.get('/', function(request, response){
             "revenue": result.revenue,
             "areas_served": result.areas_served
         };
+        // render the index file and passing the values
         response.render('index.jade', context);
     });
 });
 
+// exporting router object
 module.exports = router;
